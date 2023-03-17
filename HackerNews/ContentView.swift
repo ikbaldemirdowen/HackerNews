@@ -9,14 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack
+        {
+            List {
+                ForEach(posts)
+                {
+                    post in Text(post.title)
+                }
+            }
+            .navigationTitle("HackerNews")
+            .toolbarBackground(Color.indigo, for: .navigationBar) //changes the background of the navigation bar.
         }
-        .padding()
     }
+    
+    let posts = [Post(id: "1", title: "1"), Post(id: "2", title: "2"), Post(id: "3", title: "3")]
 }
 
 struct ContentView_Previews: PreviewProvider {
