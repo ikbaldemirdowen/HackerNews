@@ -21,14 +21,14 @@ struct ContentView: View {
                 {
                     HStack
                     {
-                        Text("\(post.points)\nreads")
+                        Text("\(post.points)\nread")
                             .padding()
                         Text(post.title)
 //                            .padding()
                     }
                 }
             }
-            .navigationTitle("News by Ikbal")
+            .navigationTitle("News by Ikbal!")
 //            .toolbarBackground(Color.white, for: .navigationBar) //changes the background of the navigation bar.
         }
         .onAppear(perform: networkManager.fetchData)
